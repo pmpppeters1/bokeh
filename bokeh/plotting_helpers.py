@@ -1,4 +1,3 @@
-
 from collections import Iterable, Sequence
 from numbers import Number
 import numpy as np
@@ -275,7 +274,7 @@ def _new_xy_plot(x_range=None, y_range=None, plot_width=None, plot_height=None,
 
     tool_objs = []
 
-    for tool in re.split(r"\s*,\s*", tools.strip()):
+    for tool in re.split(r"\s*,\s*", tools.strip()): # tools.strip() call fails if user inputs not string
         # re.split will return empty strings; ignore them.
         if tool == "":
             continue
